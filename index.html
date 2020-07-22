@@ -163,6 +163,96 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/22/Docker/">Docker</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/22/Docker/" class="archive-article-date">
+  	<time datetime="2020-07-22T15:37:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Docker的安装CentOS-7-8"><a href="#Docker的安装CentOS-7-8" class="headerlink" title="Docker的安装CentOS 7/8"></a>Docker的安装CentOS 7/8</h1><h3 id="以下参考B站Up-遇见狂神说"><a href="#以下参考B站Up-遇见狂神说" class="headerlink" title="以下参考B站Up-遇见狂神说"></a>以下参考B站Up-遇见狂神说</h3><h3 id="https-www-bilibili-com-video-BV1og4y1q7M4-p-15"><a href="#https-www-bilibili-com-video-BV1og4y1q7M4-p-15" class="headerlink" title="https://www.bilibili.com/video/BV1og4y1q7M4/?p=15"></a><a href="https://www.bilibili.com/video/BV1og4y1q7M4/?p=15" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1og4y1q7M4/?p=15</a></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 卸载docker 如果没有安装过docker可以跳过这个步骤</span></span><br><span class="line">yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 需要的安装包</span></span><br><span class="line">yum install -y yum-utils</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置镜像的仓库 建议配置阿里云的 因为官方比较慢</span></span><br><span class="line">yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line"><span class="meta">#</span><span class="bash">   https://download.docker.com/linux/centos/docker-ce.repo 这是官方的</span></span><br><span class="line">    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装docker相关的内容</span></span><br><span class="line">yum install docker-ce docker-ce-cli containerd.io</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 此时注意如果在CentOS 8上安装会报错 需要这个 containerd.io&gt;1.2.2-3 的依赖</span></span><br><span class="line"><span class="meta">#</span><span class="bash">在错误最下面那一行，linux 给了一个安装建议，说在安装命令后面追加 --skip-broken（跳过此项安装） 或者 --nobest （使用最佳安装包） 进行安装。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">然后在上面的命令上追加 --nobest ，命令为：</span></span><br><span class="line">yum install -y docker-ce --nobest #本人执行的是这一步没有任何问题</span><br><span class="line"><span class="meta">#</span><span class="bash">或者</span></span><br><span class="line">dnf -y  install docker-ce --nobest</span><br></pre></td></tr></table></figure>
+
+<h5 id="详情请见-https-blog-csdn-net-TianXieZuoMaiKong-article-details-104521439"><a href="#详情请见-https-blog-csdn-net-TianXieZuoMaiKong-article-details-104521439" class="headerlink" title="详情请见:https://blog.csdn.net/TianXieZuoMaiKong/article/details/104521439"></a>详情请见:<a href="https://blog.csdn.net/TianXieZuoMaiKong/article/details/104521439" target="_blank" rel="noopener">https://blog.csdn.net/TianXieZuoMaiKong/article/details/104521439</a></h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 启动docker服务</span></span><br><span class="line">service docker start</span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动docker</span></span><br><span class="line">systemctl start docker</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启docker</span></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看docker是否安装成功</span></span><br><span class="line">docker version</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 配置阿里云镜像加速</span></span><br><span class="line"><span class="meta">#</span><span class="bash">阿里云控制台的左边菜单栏中的产品与服务点击容器镜像服务</span></span><br><span class="line"><span class="meta">#</span><span class="bash">镜像加速其中由关于Ubuntu CentOS Mac Windows配置</span></span><br><span class="line"><span class="meta">#</span><span class="bash">CentOS</span></span><br><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'</span><br><span class="line">&#123;</span><br><span class="line">  "registry-mirrors": ["https://3jyl49d6.mirror.aliyuncs.com"]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.com//1.jpg" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/22/Docker/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MybatisPlus" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -567,6 +657,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
             
             <div class="clearfix"></div>
