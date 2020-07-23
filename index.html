@@ -163,6 +163,254 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/Tomcat/">Tomcat</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/23/Tomcat/" class="archive-article-date">
+  	<time datetime="2020-07-23T08:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Docker配置Tomcat"><a href="#Docker配置Tomcat" class="headerlink" title="Docker配置Tomcat"></a>Docker配置Tomcat</h1><h1 id="如果是阿里云需要在安全组开放端口"><a href="#如果是阿里云需要在安全组开放端口" class="headerlink" title="如果是阿里云需要在安全组开放端口"></a>如果是阿里云需要在安全组开放端口</h1><h1 id="以下参考B站Up-遇见狂神说"><a href="#以下参考B站Up-遇见狂神说" class="headerlink" title="以下参考B站Up-遇见狂神说"></a>以下参考B站Up-遇见狂神说</h1><h3 id="https-www-bilibili-com-video-BV1og4y1q7M4-p-15"><a href="#https-www-bilibili-com-video-BV1og4y1q7M4-p-15" class="headerlink" title="https://www.bilibili.com/video/BV1og4y1q7M4/?p=15"></a><a href="https://www.bilibili.com/video/BV1og4y1q7M4/?p=15" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1og4y1q7M4/?p=15</a></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 官方的使用 下载tomcat并且运行 运行完后直接停止容器内的tomcat</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用docker images可以看到tomcat</span></span><br><span class="line">docker run -it --rm tomcat:9.0</span><br><span class="line"><span class="meta">#</span><span class="bash"> 也可以pull</span></span><br><span class="line">docker pull tomcat:9.0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动运行</span></span><br><span class="line">docker run -d -p 3355:8080 --name tomcat01 tomcat</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试访问没问题 但是打开网站会报404错误</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1.linux命令少了 2.没有webapps 阿里云镜像的原因，默认是最小的镜像，所有不必要的剔除掉</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 保证最小可运行的环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入容器</span></span><br><span class="line">docker exec -it tomcat01 /bin/bash</span><br><span class="line"><span class="meta">#</span><span class="bash">将webapps.dist下的文件复制到webapps</span></span><br><span class="line">cp -r webapps.dist/* webapps</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">退出容器</span></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看docker启动的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">停止容器</span></span><br><span class="line">docker stop tomcat01</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 再次查看docker启动的容器</span></span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.com//1.jpg" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/23/Tomcat/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/Nginx/">Nginx</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/23/Nginx/" class="archive-article-date">
+  	<time datetime="2020-07-23T08:54:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Docker配置Nginx"><a href="#Docker配置Nginx" class="headerlink" title="Docker配置Nginx"></a>Docker配置Nginx</h1><h1 id="如果是阿里云需要在安全组开放端口"><a href="#如果是阿里云需要在安全组开放端口" class="headerlink" title="如果是阿里云需要在安全组开放端口"></a>如果是阿里云需要在安全组开放端口</h1><h1 id="以下参考B站Up-遇见狂神说"><a href="#以下参考B站Up-遇见狂神说" class="headerlink" title="以下参考B站Up-遇见狂神说"></a>以下参考B站Up-遇见狂神说</h1><h3 id="https-www-bilibili-com-video-BV1og4y1q7M4-p-15"><a href="#https-www-bilibili-com-video-BV1og4y1q7M4-p-15" class="headerlink" title="https://www.bilibili.com/video/BV1og4y1q7M4/?p=15"></a><a href="https://www.bilibili.com/video/BV1og4y1q7M4/?p=15" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1og4y1q7M4/?p=15</a></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载nginx镜像</span></span><br><span class="line">docker pull nginx</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看docker容器内的镜像</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动nginx --name 自定义名称 -p 外部端口:内部端口</span></span><br><span class="line">docker run -d --name nginx01 -p 3344:80 nginx</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看docker启动的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 本机测试</span></span><br><span class="line">curl localhost:3344</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入容器</span></span><br><span class="line">docker exec -it nginx01 /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 找到nginx的配置文件</span></span><br><span class="line">whereis nginx</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入目录</span></span><br><span class="line">cd /etc/nginx</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看所有文件</span></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 退出容器</span></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看docker启动的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 停止docker启动的容器 可以用CONTAINER ID停掉 也可以用自定义名称</span></span><br><span class="line">docker stop nginx01</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 再次查看docker启动的容器</span></span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.com//1.jpg" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/23/Nginx/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MySQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/MySQL/">MySQL</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/23/MySQL/" class="archive-article-date">
+  	<time datetime="2020-07-23T08:51:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考博客作者AmourLee</p>
+<p><a href="https://www.cnblogs.com/dongl961230/p/13260873.html" target="_blank" rel="noopener">https://www.cnblogs.com/dongl961230/p/13260873.html</a></p>
+<h1 id="1-MySQL下载"><a href="#1-MySQL下载" class="headerlink" title="1.MySQL下载"></a>1.MySQL下载</h1><p><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
+<p><img src="/.com//1.png" alt></p>
+<h1 id="2-解压"><a href="#2-解压" class="headerlink" title="2.解压"></a>2.解压</h1><p>下载完成后解压到自己的想要安装的目录下，然后需要手动创建一个 my.ini 文件：这个文件用来配置安装MySQL时的配置：例如端口号、最大连接数、字符集 、数据的存放位置、存储引擎</p>
+<p><img src="/.com//2.png" alt></p>
+<h1 id="3配置my-ini文件"><a href="#3配置my-ini文件" class="headerlink" title="3配置my.ini文件"></a>3配置my.ini文件</h1><p>将下面的配置复制到自己创建的my.ini文件中，但是要注意修改自己的安装路径：basedir和datadir 有注释按照注释修改</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 设置3306端口</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义设置mysql的安装目录，即解压mysql压缩包的目录</span></span><br><span class="line"><span class="attr">basedir</span>=E:\\tools\mysql8.<span class="number">0</span>\mysql-<span class="number">8.0</span>.<span class="number">20</span>-winx64</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义设置mysql数据库的数据存放目录</span></span><br><span class="line"><span class="attr">datadir</span>=E:\\tools\mysql8.<span class="number">0</span>\mysql-<span class="number">8.0</span>.<span class="number">20</span>-winx64\mysqlData</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许连接失败的次数，这是为了防止有人从该主机试图攻击数据库系统</span></span><br><span class="line"><span class="attr">max_connect_errors</span>=<span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务端使用的字符集默认为UTF8</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新表时将使用的默认存储引擎</span></span><br><span class="line"><span class="attr">default-storage-engine</span>=INNODB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认使用“mysql_native_password”插件认证</span></span><br><span class="line"><span class="attr">default_authentication_plugin</span>=mysql_native_password</span><br><span class="line"></span><br><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端默认字符集</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端连接服务端时默认使用的端口和默认字符集</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8mb4</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-初始化"><a href="#4-初始化" class="headerlink" title="4.初始化"></a>4.初始化</h1><ul>
+<li>mysqld –initialize –console</li>
+<li>mysqld –install</li>
+<li>net start mysql</li>
+</ul>
+<p><img src="/.com//3.png" alt></p>
+<h1 id="5-修改密码"><a href="#5-修改密码" class="headerlink" title="5.修改密码"></a>5.修改密码</h1><p>win+R开启新的界面进入MySQL的bin目录然后依次执行命令，来修改客户端连接密码；</p>
+<ul>
+<li>mysql -u root -p</li>
+<li>alter user root@localhost identified by ‘root’;</li>
+</ul>
+<p><img src="/.com//4.png" alt></p>
+<p>回车界面出现：Query OK 证明修改成功。</p>
+<p><img src="/.com//1.jpg" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/23/MySQL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Docker" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -492,81 +740,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/21/hello-world/" class="archive-article-date">
-  	<time datetime="2020-07-21T04:30:26.317Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/21/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -661,6 +834,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
             
             <div class="clearfix"></div>

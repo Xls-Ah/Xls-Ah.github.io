@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: mybatis | Xls的博客</title>
+  <title>MySQL | Xls的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Xls的博客">
-<meta property="og:url" content="http://yoursite.com/tags/mybatis/index.html">
+  <meta name="description" content="参考博客作者AmourLee https:&#x2F;&#x2F;www.cnblogs.com&#x2F;dongl961230&#x2F;p&#x2F;13260873.html 1.MySQL下载https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;mysql&#x2F;  2.解压下载完成后解压到自己的想要安装的目录下，然后需要手动创建一个 my.ini 文件：这个文件用来配置安装MySQL时的配置：例如端口号、最大连接数、字符集 、数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="http://yoursite.com/2020/07/23/MySQL/index.html">
 <meta property="og:site_name" content="Xls的博客">
+<meta property="og:description" content="参考博客作者AmourLee https:&#x2F;&#x2F;www.cnblogs.com&#x2F;dongl961230&#x2F;p&#x2F;13260873.html 1.MySQL下载https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;mysql&#x2F;  2.解压下载完成后解压到自己的想要安装的目录下，然后需要手动创建一个 my.ini 文件：这个文件用来配置安装MySQL时的配置：例如端口号、最大连接数、字符集 、数据">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/.com//1.png">
+<meta property="og:image" content="http://yoursite.com/.com//2.png">
+<meta property="og:image" content="http://yoursite.com/.com//3.png">
+<meta property="og:image" content="http://yoursite.com/.com//4.png">
+<meta property="og:image" content="http://yoursite.com/.com//1.jpg">
+<meta property="article:published_time" content="2020-07-23T08:51:08.000Z">
+<meta property="article:modified_time" content="2020-07-23T08:58:05.798Z">
 <meta property="article:author" content="Xls">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//1.png">
   
     <link rel="alternative" href="/atom.xml" title="Xls的博客" type="application/atom+xml">
   
@@ -161,60 +172,198 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MySQL" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/21/MybatisPlus/" class="archive-article-date">
-  	<time datetime="2020-07-21T04:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/21/MybatisPlus/">MybatisPlus快速上手</a>
+    <h1 class="article-title" itemprop="name">
+      MySQL
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/07/23/MySQL/" class="archive-article-date">
+  	<time datetime="2020-07-23T08:51:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考博客作者AmourLee</p>
+<p><a href="https://www.cnblogs.com/dongl961230/p/13260873.html" target="_blank" rel="noopener">https://www.cnblogs.com/dongl961230/p/13260873.html</a></p>
+<h1 id="1-MySQL下载"><a href="#1-MySQL下载" class="headerlink" title="1.MySQL下载"></a>1.MySQL下载</h1><p><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
+<p><img src="/.com//1.png" alt></p>
+<h1 id="2-解压"><a href="#2-解压" class="headerlink" title="2.解压"></a>2.解压</h1><p>下载完成后解压到自己的想要安装的目录下，然后需要手动创建一个 my.ini 文件：这个文件用来配置安装MySQL时的配置：例如端口号、最大连接数、字符集 、数据的存放位置、存储引擎</p>
+<p><img src="/.com//2.png" alt></p>
+<h1 id="3配置my-ini文件"><a href="#3配置my-ini文件" class="headerlink" title="3配置my.ini文件"></a>3配置my.ini文件</h1><p>将下面的配置复制到自己创建的my.ini文件中，但是要注意修改自己的安装路径：basedir和datadir 有注释按照注释修改</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 设置3306端口</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义设置mysql的安装目录，即解压mysql压缩包的目录</span></span><br><span class="line"><span class="attr">basedir</span>=E:\\tools\mysql8.<span class="number">0</span>\mysql-<span class="number">8.0</span>.<span class="number">20</span>-winx64</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义设置mysql数据库的数据存放目录</span></span><br><span class="line"><span class="attr">datadir</span>=E:\\tools\mysql8.<span class="number">0</span>\mysql-<span class="number">8.0</span>.<span class="number">20</span>-winx64\mysqlData</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许连接失败的次数，这是为了防止有人从该主机试图攻击数据库系统</span></span><br><span class="line"><span class="attr">max_connect_errors</span>=<span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务端使用的字符集默认为UTF8</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新表时将使用的默认存储引擎</span></span><br><span class="line"><span class="attr">default-storage-engine</span>=INNODB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认使用“mysql_native_password”插件认证</span></span><br><span class="line"><span class="attr">default_authentication_plugin</span>=mysql_native_password</span><br><span class="line"></span><br><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端默认字符集</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端连接服务端时默认使用的端口和默认字符集</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8mb4</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-初始化"><a href="#4-初始化" class="headerlink" title="4.初始化"></a>4.初始化</h1><ul>
+<li>mysqld –initialize –console</li>
+<li>mysqld –install</li>
+<li>net start mysql</li>
+</ul>
+<p><img src="/.com//3.png" alt></p>
+<h1 id="5-修改密码"><a href="#5-修改密码" class="headerlink" title="5.修改密码"></a>5.修改密码</h1><p>win+R开启新的界面进入MySQL的bin目录然后依次执行命令，来修改客户端连接密码；</p>
+<ul>
+<li>mysql -u root -p</li>
+<li>alter user root@localhost identified by ‘root’;</li>
+</ul>
+<p><img src="/.com//4.png" alt></p>
+<p>回车界面出现：Query OK 证明修改成功。</p>
+<p><img src="/.com//1.jpg" alt></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/23/MySQL/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/07/23/Nginx/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Nginx
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/07/22/Docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Docker</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -237,9 +386,9 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
