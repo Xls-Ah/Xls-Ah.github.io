@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Xls的博客">
 <meta property="og:description" content="Docker配置Tomcat如果是阿里云需要在安全组开放端口以下参考B站Up-遇见狂神说https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1og4y1q7M4&#x2F;?p&#x3D;1512345678910111213141516171819202122232425262728# 官方的使用 下载tomcat并且运行 运行完后直接停止容器内的tomcat# 使用docker images可以看到">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/.com//Tomcat/1.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/Tomcat/1.jpg">
 <meta property="article:published_time" content="2020-07-23T08:54:17.000Z">
-<meta property="article:modified_time" content="2020-07-23T09:49:05.415Z">
+<meta property="article:modified_time" content="2020-07-23T11:02:06.229Z">
 <meta property="article:author" content="Xls">
 <meta property="article:tag" content="Tomcat">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/.com//Tomcat/1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/assets/Tomcat/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Xls的博客" type="application/atom+xml">
   
@@ -190,7 +190,7 @@ ga('send', 'pageview');
       
         <h1 id="Docker配置Tomcat"><a href="#Docker配置Tomcat" class="headerlink" title="Docker配置Tomcat"></a>Docker配置Tomcat</h1><h1 id="如果是阿里云需要在安全组开放端口"><a href="#如果是阿里云需要在安全组开放端口" class="headerlink" title="如果是阿里云需要在安全组开放端口"></a>如果是阿里云需要在安全组开放端口</h1><h1 id="以下参考B站Up-遇见狂神说"><a href="#以下参考B站Up-遇见狂神说" class="headerlink" title="以下参考B站Up-遇见狂神说"></a>以下参考B站Up-遇见狂神说</h1><h3 id="https-www-bilibili-com-video-BV1og4y1q7M4-p-15"><a href="#https-www-bilibili-com-video-BV1og4y1q7M4-p-15" class="headerlink" title="https://www.bilibili.com/video/BV1og4y1q7M4/?p=15"></a><a href="https://www.bilibili.com/video/BV1og4y1q7M4/?p=15" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1og4y1q7M4/?p=15</a></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 官方的使用 下载tomcat并且运行 运行完后直接停止容器内的tomcat</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用docker images可以看到tomcat</span></span><br><span class="line">docker run -it --rm tomcat:9.0</span><br><span class="line"><span class="meta">#</span><span class="bash"> 也可以pull</span></span><br><span class="line">docker pull tomcat:9.0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动运行</span></span><br><span class="line">docker run -d -p 3355:8080 --name tomcat01 tomcat</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试访问没问题 但是打开网站会报404错误</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1.linux命令少了 2.没有webapps 阿里云镜像的原因，默认是最小的镜像，所有不必要的剔除掉</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 保证最小可运行的环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入容器</span></span><br><span class="line">docker exec -it tomcat01 /bin/bash</span><br><span class="line"><span class="meta">#</span><span class="bash">将webapps.dist下的文件复制到webapps</span></span><br><span class="line">cp -r webapps.dist/* webapps</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">退出容器</span></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看docker启动的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">停止容器</span></span><br><span class="line">docker stop tomcat01</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 再次查看docker启动的容器</span></span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure>
 
-<p><img src="/.com//Tomcat/1.jpg" alt></p>
+<p><img src="/.com//../../../assets/Tomcat/1.jpg" alt></p>
 
       
 
