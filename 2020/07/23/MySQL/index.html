@@ -15,17 +15,17 @@
 <meta property="og:site_name" content="Xls的博客">
 <meta property="og:description" content="参考博客作者AmourLee https:&#x2F;&#x2F;www.cnblogs.com&#x2F;dongl961230&#x2F;p&#x2F;13260873.html 1.MySQL下载https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;mysql&#x2F;  2.解压下载完成后解压到自己的想要安装的目录下，然后需要手动创建一个 my.ini 文件：这个文件用来配置安装MySQL时的配置：例如端口号、最大连接数、字符集 、数据">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/.com//1.png">
-<meta property="og:image" content="http://yoursite.com/.com//2.png">
-<meta property="og:image" content="http://yoursite.com/.com//3.png">
-<meta property="og:image" content="http://yoursite.com/.com//4.png">
-<meta property="og:image" content="http://yoursite.com/.com//1.jpg">
+<meta property="og:image" content="http://yoursite.com/.com//MySQL/1.png">
+<meta property="og:image" content="http://yoursite.com/.com//MySQL/2.png">
+<meta property="og:image" content="http://yoursite.com/.com//MySQL/3.png">
+<meta property="og:image" content="http://yoursite.com/.com//MySQL/4.png">
+<meta property="og:image" content="http://yoursite.com/.com//MySQL/1.jpg">
 <meta property="article:published_time" content="2020-07-23T08:51:08.000Z">
-<meta property="article:modified_time" content="2020-07-23T08:58:05.798Z">
+<meta property="article:modified_time" content="2020-07-23T09:48:52.653Z">
 <meta property="article:author" content="Xls">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/.com//1.png">
+<meta name="twitter:image" content="http://yoursite.com/.com//MySQL/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Xls的博客" type="application/atom+xml">
   
@@ -195,9 +195,9 @@ ga('send', 'pageview');
         <p>参考博客作者AmourLee</p>
 <p><a href="https://www.cnblogs.com/dongl961230/p/13260873.html" target="_blank" rel="noopener">https://www.cnblogs.com/dongl961230/p/13260873.html</a></p>
 <h1 id="1-MySQL下载"><a href="#1-MySQL下载" class="headerlink" title="1.MySQL下载"></a>1.MySQL下载</h1><p><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
-<p><img src="/.com//1.png" alt></p>
+<p><img src="/.com//MySQL/1.png" alt></p>
 <h1 id="2-解压"><a href="#2-解压" class="headerlink" title="2.解压"></a>2.解压</h1><p>下载完成后解压到自己的想要安装的目录下，然后需要手动创建一个 my.ini 文件：这个文件用来配置安装MySQL时的配置：例如端口号、最大连接数、字符集 、数据的存放位置、存储引擎</p>
-<p><img src="/.com//2.png" alt></p>
+<p><img src="/.com//MySQL/2.png" alt></p>
 <h1 id="3配置my-ini文件"><a href="#3配置my-ini文件" class="headerlink" title="3配置my.ini文件"></a>3配置my.ini文件</h1><p>将下面的配置复制到自己创建的my.ini文件中，但是要注意修改自己的安装路径：basedir和datadir 有注释按照注释修改</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 设置3306端口</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义设置mysql的安装目录，即解压mysql压缩包的目录</span></span><br><span class="line"><span class="attr">basedir</span>=E:\\tools\mysql8.<span class="number">0</span>\mysql-<span class="number">8.0</span>.<span class="number">20</span>-winx64</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义设置mysql数据库的数据存放目录</span></span><br><span class="line"><span class="attr">datadir</span>=E:\\tools\mysql8.<span class="number">0</span>\mysql-<span class="number">8.0</span>.<span class="number">20</span>-winx64\mysqlData</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许连接失败的次数，这是为了防止有人从该主机试图攻击数据库系统</span></span><br><span class="line"><span class="attr">max_connect_errors</span>=<span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务端使用的字符集默认为UTF8</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新表时将使用的默认存储引擎</span></span><br><span class="line"><span class="attr">default-storage-engine</span>=INNODB</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认使用“mysql_native_password”插件认证</span></span><br><span class="line"><span class="attr">default_authentication_plugin</span>=mysql_native_password</span><br><span class="line"></span><br><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端默认字符集</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端连接服务端时默认使用的端口和默认字符集</span></span><br><span class="line"><span class="attr">port</span>=<span class="number">3306</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8mb4</span><br></pre></td></tr></table></figure>
 
@@ -206,15 +206,15 @@ ga('send', 'pageview');
 <li>mysqld –install</li>
 <li>net start mysql</li>
 </ul>
-<p><img src="/.com//3.png" alt></p>
+<p><img src="/.com//MySQL/3.png" alt></p>
 <h1 id="5-修改密码"><a href="#5-修改密码" class="headerlink" title="5.修改密码"></a>5.修改密码</h1><p>win+R开启新的界面进入MySQL的bin目录然后依次执行命令，来修改客户端连接密码；</p>
 <ul>
 <li>mysql -u root -p</li>
 <li>alter user root@localhost identified by ‘root’;</li>
 </ul>
-<p><img src="/.com//4.png" alt></p>
+<p><img src="/.com//MySQL/4.png" alt></p>
 <p>回车界面出现：Query OK 证明修改成功。</p>
-<p><img src="/.com//1.jpg" alt></p>
+<p><img src="/.com//MySQL/1.jpg" alt></p>
 
       
 
